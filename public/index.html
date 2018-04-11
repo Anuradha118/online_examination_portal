@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="edacademy" lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>edAcademy - Online Examination Portal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/one-page-wonder.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        /* Set the fixed height of the footer here */
+        line-height: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#/">edAcademy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive" ng-controller="userController as user">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" ng-href="#/signin" ng-hide="isLoggedIn"><i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/admindashboard" ng-show="isAdmin"><i class="fa fa-tachometer" aria-hidden="true"></i> Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#/userdashboard" ng-show="isUser"><i class="fa fa-tachometer" aria-hidden="true"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" ng-show="isLoggedIn" ng-click="user.logout()"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <br>
+    <div class="ng-view" autoscroll="true">
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!-- Footer -->
+    <footer class="py-3 bg-black">
+      <div class="container">
+        <p class="m-0 text-center text-white small">Copyright &copy; edAcademy 2018</p>
+        <p class="m-0 text-center text-white small">Anuradha Sahoo</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    
+    <!-- Angular Files -->
+    <script src="js/angular-jwt.js"></script>
+    <script src="js/Chart.js"></script>
+    <script src="js/angular-chart.js"></script>
+    
+  <script src="angular/app.js"></script>
+  <script src="angular/routes.js"></script>
+
+  <!-- Angular Controllers -->
+  <script src="angular/controllers/userController.js"></script>
+  <script src="angular/controllers/testController.js"></script>
+  <script src="angular/controllers/testStatistics.js"></script>
+  <script src="angular/controllers/testRunController.js"></script>
+
+  <!-- Angular Services -->
+  <script src="angular/services/userService.js"></script>
+  <script src="angular/services/testService.js"></script>
+  <script src="angular/services/testInfo.js"></script>
+  
+  <!-- Angular Directives -->
+  <script src="angular/directives/performanceChart.js"></script>
+  </body>
+
+</html>

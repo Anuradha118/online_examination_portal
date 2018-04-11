@@ -1,0 +1,30 @@
+{
+    "test":{
+        "PORT":3000,
+        "MONGODB_URI":"mongodb://localhost:27017/EdAcademyTest",
+        "JWT_SECRET":"poasn748902jdndmdj",
+        "SENDGRID_USER":"anuradha93",
+        "SENDGRID_SECRET":"snehalata@14",
+        "MSG91_AUTHKEY":"204171AbIFqNi4305aae6ec7",
+        "FB_CLIENT_ID":193898741343872,
+        "FB_CLIENT_SECRET":"e63aebadb6559f26eb096e6b29231a60",
+        "FB_CALLBACK_URL":"http://localhost:3000/signin/facebook/callback",
+        "GOOGLE_CLIENT_ID":"8922537660-5lnik636d903h2tncr0o4do99ub32vhl.apps.googleusercontent.com",
+        "GOOGLE_CLIENT_SECRET":"Ml8PQyFMXK7GGG6eb25zKw4E",
+        "GOOGLE_CALLBACK_URL":"http://localhost:3000/signin/google/callback"
+    },
+    "development":{
+        "PORT":3000,
+        "MONGODB_URI":"mongodb://localhost:27017/EdAcademyApp",
+        "JWT_SECRET":"podjgdgb3638920fmn",
+        "SENDGRID_USER":"anuradha93",
+        "SENDGRID_SECRET":"snehalata@14",
+        "MSG91_AUTHKEY":"204171AbIFqNi4305aae6ec7",
+        "FB_CLIENT_ID":153967061906522,
+        "FB_CLIENT_SECRET":"0be3022b0c7cac0ae0d5a5665e950345",
+        "FB_CALLBACK_URL":"http://localhost:3000/signin/facebook/callback",
+        "GOOGLE_CLIENT_ID":"8922537660-0vq3fnopj10g0k1ctmnlffvk7uitiett.apps.googleusercontent.com",
+        "GOOGLE_CLIENT_SECRET":"SJalMXHg_TH8PsiA9JHeDsWd",
+        "GOOGLE_CALLBACK_URL":"http://localhost:3000/signin/google/callback"
+    }
+}

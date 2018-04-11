@@ -1,0 +1,76 @@
+<br>
+<br>
+
+<div class="container">
+    <div class="row h-100">
+        <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3">
+            <a ng-href="#/available-tests">
+                <button type="button" class="btn btn-warning">
+                    <strong>Take Test</strong></button>
+            </a>
+        </div>
+        <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-if="test.noOfTests!=0">
+            <a ng-href="#/attempted-tests">
+                <button type="button" class="btn btn-danger">
+                    <strong>Attempted Test</strong></button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="container">
+    <div class="row h-100">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="card border-primary mb-3">
+                <div class="card-header bg-info">
+                    <h4>Your Statistics</h4>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">
+                        <strong>
+                            <span style="color:rgb(180, 19, 73)">Number of Tests Attempted:
+                                <span style="color:rgb(226, 106, 37)">{{test.noOfTests}}</span>
+                            </span>
+                        </strong>
+                    </h6>
+                    <p class="card-text">
+                        <strong>
+                            <span style="color:rgb(180, 19, 73)">Highest Score among all the tests attempted:
+                                <span style="color:rgb(226, 106, 37)">{{test.max}}</span>
+                            </span>
+                        </strong>
+                    </p>
+                    <p class="card-text">
+                        <strong>
+                            <span style="color:rgb(180, 19, 73)">Lowest Score among all the tests attempted:
+                                <span style="color:rgb(226, 106, 37)">{{test.min}}</span>
+                            </span>
+                        </strong>
+                    </p>
+                    <p class="card-text">
+                        <strong>
+                            <span style="color:rgb(180, 19, 73)">Average Percentage:
+                                <span style="color:rgb(226, 106, 37)">{{test.avg}} %</span>
+                            </span>
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" ng-if="test.noOfTests!=0">
+            <h6 style="text-align:right;"><strong>Average Performance</strong></h6>
+            <div class="chart float-right" performance-pie-chart="Percent"></div>
+            <br>
+            <br>
+        </div>
+        <br>
+    </div>
+</div>
+<center ng-if="test.noOfTests!=0">
+    <div style="width:600px;height:400px;">
+        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series"></canvas>
+    </canvas>
+    </div>
+</center>
+<br>

@@ -1,0 +1,49 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class=" col-md-12">
+            <h4 ng-show='testStat.allUsers.length>0'>All Registered Users</h4>
+            <strong ng-show='testStat.allUsers.length===0'>No user has registered</strong>
+            <br>
+            <div class="table-responsive" ng-show='testStat.allUsers.length>0'>
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Mobile No</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in testStat.allUsers">
+                            <th scope="row">{{$index+1}}</th>
+                            <td class="hover-style" ng-click="testStat.getExamineeDetails(x.email)" ng-if="x.firstname">{{x.firstname+' '+x.lastname}}</td>
+                            <td class="hover-style" ng-click="testStat.getExamineeDetails(x.email)" ng-if="x.name">{{x.name}}</td>
+                            <td>{{x.email}}</td>
+                            <td ng-if="x.mobile">{{x.mobile}}</td>
+                            <td ng-if="!x.mobile">NA</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>            
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+    .hover-style:hover {
+        cursor: pointer;
+    }
+
+    .hover-style {
+        color: blue;
+        text-decoration: underline;
+    }
+</style>

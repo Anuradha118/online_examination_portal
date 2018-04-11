@@ -1,0 +1,85 @@
+<br>
+<br>
+<div class="container">
+    <div class="row h-100">
+        <div class="col-lg-8">
+            <!-- <h5>No Users attempted the test</h5> -->
+            <div class="card border-info mb-3">
+                <div class="card-header bg-secondary mb-3">
+                    <h5 class="text-black">Test Statistics</h5>
+                </div>
+                <div class="caard-body mx-2">
+                    <p>
+                        Number of users attempted the test:<b><span>{{testStat.count}}</span></b>
+                    </p>
+                    <p>
+                        Highest Score:<b><span>{{testStat.high}}</span></b>
+                    </p>
+                    <p>
+                        Average Score:<b><span>{{testStat.avg}}</span></b>
+                    </p>
+                    <p>
+                        Least Score:<b><span>{{testStat.low}}</span></b>
+                    </p>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="container">
+                        <div class="row h-100">
+                            <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <a ng-href="#/admindashboard">
+                                    <button type="button" class="btn btn-success">
+                                        Go to Home Page
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<hr>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="table-responsive" ng-show="testStat.info.length>0">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Score</th>
+                            <th>Attempted On</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="s in testStat.info|pageFilter:testStat.currentPage*testStat.pageSize | limitTo:testStat.pageSize">
+                            <td>{{$index+1}}</th>
+                            <td>{{s.username}}</td>
+                            <td>{{s.email}}</td>
+                            <td>{{s.score}}</td>
+                            <td>{{s.takenAt|date:"medium"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button ng-show='testStat.info.length>0' ng-disabled="testStat.currentPage == 0" ng-click="testStat.currentPage=testStat.currentPage-1">
+                    Previous
+            </button>
+                    <span ng-show='testStat.info.length>0'>{{testStat.currentPage+1}}/{{testStat.numberOfPages()}}</span>
+            <button ng-show='testStat.info.length>0' ng-disabled="testStat.currentPage >= testStat.getData().length/testStat.pageSize - 1" ng-click="testStat.currentPage=testStat.currentPage+1">
+                    Next
+            </button>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

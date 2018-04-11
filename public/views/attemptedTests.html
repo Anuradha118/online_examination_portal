@@ -1,0 +1,54 @@
+<div class="modal fade preview-modal" id="exampleModal" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style="color:rgb(148, 22, 165)">Test Details</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <center>
+                        <h4> You have already taken the test !</h4>
+                        <h3> THANK YOU <i class="fa fa-smile-o"></i></h3>
+                        <h5 style="color:rgb(26, 147, 168)">Number of Questions : {{test.qCount}}</h5>
+                        <h5 style="color:rgb(59, 168, 26)"> Number of Correct Answers(Score) : {{test.tScore}}</h5>
+                        <h6 style="color:rgb(168, 26, 69)">Percentage : {{test.tPercent}} %</h6>
+                    </center>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+    <h4>Test Taken By User</h4>
+    <br>
+    <h5 ng-if="test.noOfTests==0">You have not attempted any Tests yet!!</h5>
+    <div class="row h-100" ng-if="test.noOfTests!=0">
+        <div ng-repeat="t in test.attemptedTest" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <div class="card border-primary mb-3">
+                <div class="card-header" style="background-color:rgb(9, 155, 131)">
+                    <h5>{{t.title}}</h5>
+                </div>
+                <div class="card-body">
+                    <h6 class="card-title">Number of Questions : {{t.totalQuestions}}</h6>
+                    <p class="card-text">Time for Test : {{t.totalTime}}</p>
+                    <a ng-click="test.testScoreInfo(t)" href="" data-toggle="modal" data-target="#exampleModal" class="btn btn-warning"><strong>Score</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" ng-click="test.goBack()">Go Back</button>
+</div>
+<br>
+<br>
+<br>

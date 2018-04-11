@@ -1,0 +1,208 @@
+.panel-login {
+	border-color: #ccc;
+	-webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+}
+.panel-login>.panel-heading {
+	color: #00415d;
+	background-color: #fff;
+	border-color: #fff;
+	text-align:center;
+}
+.panel-login>.panel-heading a{
+	text-decoration: none;
+	color: #666;
+	font-weight: bold;
+	font-size: 15px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+	color: #029f5b;
+	font-size: 18px;
+}
+.panel-login>.panel-heading hr{
+	margin-top: 10px;
+	margin-bottom: 0px;
+	clear: both;
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+	background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+	background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+	height: 45px;
+	border: 1px solid #ddd;
+	font-size: 16px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+	outline:none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	border-color: #ccc;
+}
+.btn-login {
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+	color: #fff;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
+}
+.forgot-password {
+	text-decoration: underline;
+	color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+	text-decoration: underline;
+	color: #666;
+}
+
+.btn-register {
+	background-color: #1CB94E;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #1CB94A;
+}
+.btn-register:hover,
+.btn-register:focus {
+	color: #fff;
+	background-color: #1CA347;
+	border-color: #1CA347;
+}
+
+.btn-primary{
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active{
+	color: #fff;
+	background-color: #007bff !important;
+	border-color: #007bff !important;
+	box-shadow: 0 0 0 0.2rem rgba(60, 118, 226, 0.5);
+}
+
+.btn-secondary{
+	background-color: #797b7c;
+	border-color: #797b7c;
+  }
+  
+  .btn-secondary:hover,
+  .btn-secondary:focus,
+  .btn-secondary:active{
+	  color: #fff;
+	  background-color: #797b7c !important;
+	  border-color: #797b7c !important;
+	  box-shadow: 0 0 0 0.2rem #797b7c(60, 118, 226, 0.5);
+  }
+
+.bg-primary{
+	background-color: rgb(137, 187, 22) !important;
+}
+
+header.masthead{
+	background:linear-gradient(0deg, #17bb3b 0%, #1ea7dd 100%);
+	height: 200px;
+}
+header.masthead .masthead-content .masthead-heading {
+	font-size: 50px;
+}
+header.masthead .masthead-content .masthead-subheading {
+	font-size: 30px;
+}
+
+/* .fa {
+	padding: 5px;
+	font-size: 10px;
+	width: 5px;
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+  }
+  
+  .fa:hover {
+	  opacity: 0.7;
+  }
+  
+  .fa-facebook {
+	background: #3B5998;
+	color: white;
+  } */
+
+@media (max-width: 800px) {
+	header.masthead .masthead-content .masthead-heading {
+		font-size: 32px;
+	}
+	header.masthead .masthead-content .masthead-subheading {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 210px) {
+	header.masthead .masthead-content .masthead-heading {
+		font-size: 16px;
+	}
+	header.masthead .masthead-content .masthead-subheading {
+		font-size: 8px;
+	}
+}
+
+/* canvas {
+	display: block;
+	position: relative;
+	top: 10px;
+	left: 0;
+  } */
+
+  .chart {
+    position:relative;
+	margin:25px;
+	/* margin-bottom: 20px; */
+    width:150px;
+    height:150px;
+  }
+  .chart > canvas {
+    display:block;
+    position:absolute;
+    top:0;
+	left:0;
+  }
+  .chart > span {
+    color:#555;
+    display:block;
+    line-height:200px;
+    text-align:center;
+    width:200px;
+    font-family:sans-serif;
+    font-size:20px;
+    font-weight:100;
+    margin-left:3px;
+  }
+  

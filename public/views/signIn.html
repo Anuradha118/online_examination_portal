@@ -1,0 +1,264 @@
+<br>
+<br>
+
+<div class="container">
+  <div class="row h-100">
+      <div class="col-lg-5 mx-auto">
+          <div class="card border-info mb-3">
+              <center>
+                  <h4 id="log-header" class="card-header bg-info" style="color:white">SignIn</h4>
+                  <h4 id="reg-header" style="display:none;color:white" class="card-header bg-info">SignUp</h4>
+                  <h4 id="forgot-header" style="display:none;color:white" class="card-header bg-info">Forgot Password</h4>
+              </center>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <center>
+                              <h6 id="emailHelp" style="color:green" class="form-text">{{user.message}}</h6>
+                          </center>
+                          <br>
+
+                          <form id="login-form" role="form" class="active" ng-submit="user.signin()" style="display: block;">
+                              <div class="container">
+                                  <div class="row h-100">
+                                      <div class=" col-lg-12 col-md-12" style="color:white;">
+                                          <a ng-href="/signin/google" class="btn btn-block btn-social btn-md btn-google">
+                                            <i class="fa fa-google"></i> Sign in with Google
+                                          </a>
+                                      </div>
+                                    </div>
+                                    <br>
+                                    <div class="row h-100">
+                                      <div class="col-lg-12 col-md-12" style="color:white;">
+                                          <a ng-href="/signin/facebook" class="btn btn-block btn-social btn-md btn-facebook">
+                                            <i class="fa fa-facebook"></i> Sign in with Facebook
+                                          </a>  
+                                      </div>
+                                  </div>
+                              </div>
+                              <br>
+                              <center>
+                                  <h5>OR</h5>
+                                  <h6 style="color:blue">Sign in with Email if you already have an account.</h6>
+                            </center>
+                              <div class="form-group">
+                                  <input type="text" name="username" ng-model="user.email" id="username" tabindex="1" class="form-control" placeholder="Email"
+                                      value="" required="">
+                              </div>
+                              <div class="form-group">
+                                  <input type="password" name="password" ng-model="user.password" id="logpassword" tabindex="2" class="form-control" placeholder="Password"
+                                      required="">
+                              </div>
+                              <center>
+                                  <div class="form-group">
+                                      <center>
+                                          <input type="submit" style="width:150px" class="btn btn-primary" value="SignIn">
+                                      </center>
+                                  </div>
+                              </center>
+                              <div class="form-group">
+                                  <div class="row">
+                                      <div class="col-lg-12">
+                                          <div class="text-center">
+                                              <a href="" id="forgot-email-form-link" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+
+                          <form id="register-form" ng-submit="user.signup()" role="form" style="display: none;">
+
+                              
+                              <br>
+                              <div class="form-group">
+                                  <input type="text" ng-model="user.firstname" id="firstname" tabindex="1" class="form-control" placeholder="Firstname"
+                                      value="" required="">
+                              </div>
+                              <div class="form-group">
+                                  <input type="text" ng-model="user.lastname" id="lastname" tabindex="1" class="form-control" placeholder="Lastname" value=""
+                                      required="">
+                              </div>
+                              <div class="form-group">
+                                  <input type="email" ng-model="user.email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value=""
+                                      required="">
+                              </div>
+                              <div class="form-group">
+                                  <input type="text" ng-model="user.mobile" id="mobile" tabindex="2" class="form-control" placeholder="Mobile Number" required="">
+                              </div>
+                              <div class="form-group">
+                                  <input type="password" ng-model="user.password" id="password" tabindex="2" class="form-control" placeholder="Password"
+                                      required="">
+                              </div>
+                              <center>
+                                  <div class="form-group">
+                                      <center>
+                                          <input type="submit" style="width:150px" class="btn btn-primary" value="SignUp">
+                                      </center>
+                                  </div>
+                              </center>
+                          </form>
+                          <form id="forgot-email-form" ng-submit="user.forgotPassword()" role="form" style="display: none;">
+                              <div class="form-group">
+                                  <input type="email" name="email" ng-model="user.email" tabindex="1" class="form-control" placeholder="Email" value=""
+                                      required="">
+                              </div>
+
+                              <center>
+                                  <div class="form-group">
+                                      <center>
+                                          <input type="submit" id="send-otp" style="width:150px" class="btn btn-primary" value="Send">
+                                      </center>
+                                  </div>
+                              </center>
+                          </form>
+                          <form id="otp-form" ng-submit="user.verifyOtp()" role="form" style="display: none;">
+                              <div class="form-group">
+                                  <input type="text" tabindex="1" ng-model="user.otp" class="form-control" placeholder="OTP" value="" required="">
+                              </div>
+                              <input type="hidden" id="check" value="{{user.check}}" <center>
+
+                              <center>
+                                  <div class="form-group">
+                                      <center>
+                                          <input type="submit" id="otp-submit" style="width:150px" class="btn btn-primary" value="Verify">
+                                      </center>
+                                  </div>
+                              </center>
+                          </form>
+                          <form id="reset-form" ng-submit="user.resetPassword()" role="form" style="display: none;">
+                              <div class="form-group">
+                                  <input type="password" ng-model="user.newPassword" tabindex="1" class="form-control" placeholder="Enter New Password"
+                                      value="" required="">
+                              </div>
+                              <div class="form-group">
+                                  <input type="password" ng-model="user.confirmPassword" tabindex="1" class="form-control" placeholder="Re-Enter New Password"
+                                      value="" required="">
+                              </div>
+                              <div class="form-group">
+                                  <center>
+                                      <input type="submit" id="reset-submit" style="width:150px" class="btn btn-primary" value="Submit">
+                                  </center>
+                              </div>
+                              </center>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+              <div class="card-footer">
+                  <center>
+                      <button type="button" id="register-form-link" class="btn btn-success">SignUp</button>
+                      <button type="button" id="login-form-link" class="btn btn-success" style="display: none;">SignIn</button>
+                  </center>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<br>
+<br>
+<script type="text/javascript">
+  $(function () {
+
+      $('#login-form-link').click(function (e) {
+          $("#login-form").delay(100).fadeIn(100);
+          $("#register-form").fadeOut(100);
+          $("#forgot-email-form").fadeOut(100);
+          $('#register-form-link').removeClass('active');
+          $(this).addClass('active');
+          $('#register-form-link').show();
+          $('#login-form-link').hide();
+          $('#reg-header').hide();
+          $('#log-header').show();
+          $('#forgot-header').hide();
+          $('#otp-form').hide();
+          $('#reset-form').hide();
+          e.preventDefault();
+      });
+
+      $('#register-form-link').click(function (e) {
+          $("#register-form").delay(100).fadeIn(100);
+          $("#login-form").fadeOut(100);
+          $("#forgot-email-form").fadeOut(100);
+          $('#login-form-link').removeClass('active');
+          $(this).addClass('active');
+          $('#register-form-link').hide();
+          $('#login-form-link').show();
+          $('#reg-header').show();
+          $('#log-header').hide();
+          $('#otp-form').hide();
+          $('#forgot-header').hide();
+          $('#reset-form').hide();
+          e.preventDefault();
+      });
+
+      $('#forgot-email-form-link').click(function (e) {
+          $("#forgot-email-form").delay(100).fadeIn(100);
+          $("#login-form").fadeOut(100);
+          $('#login-form-link').removeClass('active');
+          $(this).addClass('active');
+          $('#register-form-link').show();
+          $('#login-form-link').show();
+          $('#reg-header').hide();
+          $('#log-header').hide();
+          $('#forgot-header').show();
+          $('#otp-form').hide();
+          $('#reset-form').hide();
+          e.preventDefault();
+      });
+
+      /*$('#otp-submit').click(function (e) {
+          $("#otp-form").hide();
+          //$("#login-form").fadeOut(100);
+          $('#login-form-link').removeClass('active');
+          $(this).addClass('active');
+          $('#register-form-link').show();
+          $('#login-form-link').show();
+          $('#reg-header').hide();
+          $('#log-header').hide();
+          $('#forgot-header').show();
+          $('#reset-form').show();
+          e.preventDefault();
+      });*/
+
+      $('#forgot-email-form').submit(function (e) {
+          $("#forgot-email-form").hide();
+          //$("#login-form").fadeOut(100);
+          $('#login-form-link').removeClass('active');
+          $(this).addClass('active');
+          $('#register-form-link').show();
+          $('#login-form-link').show();
+          $('#reg-header').hide();
+          $('#log-header').hide();
+          $('#forgot-header').show();
+          $('#otp-form').show();
+          $('#reset-form').hide();
+          e.preventDefault();
+      });
+
+      $('#otp-form').on('submit', function (e) {
+          e.preventDefault();
+          var interval = setInterval(checkFunction, 1000);
+
+          function checkFunction() {
+              //alert($("#check").val());
+              if ($("#check").val() == "false") {
+                  //alert($("#check").val());
+                  $("#otp-form").hide();
+                  //$("#login-form").fadeOut(100);
+                  $('#login-form-link').removeClass('active');
+                  $(this).addClass('active');
+                  $('#register-form-link').show();
+                  $('#login-form-link').show();
+                  $('#reg-header').hide();
+                  $('#log-header').hide();
+                  $('#forgot-header').show();
+                  $('#reset-form').show();
+                  clearInterval(interval);
+              }
+          }
+      });
+  });
+</script>
+<br>
+<br>

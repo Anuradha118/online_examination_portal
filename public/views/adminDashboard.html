@@ -1,0 +1,96 @@
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row h-100">
+        <div class="col-lg-4">
+            <div class="card border-dark">
+                <div class="card-header text-white bg-secondary">
+                    <h5>Registered Users<h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                            <i class="fa fa-users" style="font-size:50px"></i>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                            <p class="card-text" style="font-size:32px;">{{test.noOfUsers}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="container">
+                        <div class="row h-100">
+                            <div class=" col-lg-8 col-md-8 col-sm-6 col-xs-6">
+                                <a ng-href="/#/allUsers">
+                                    <button type="button" class="btn btn-secondary">
+                                        Get Details</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+                <a ng-href="/#/addtest"><button class="float-middle btn btn-primary" type="button">Create Test</button></a>
+        </div>
+        <div class="col-lg-4">
+            <h5>Search</h5>
+            <div class="input-group">
+                <input type="text" class="form-control" ng-model="myDetails.searchText" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+            </div>
+        </div>    
+    </div>
+</div>
+<hr>
+<br>
+<div class="container">
+    <div class="row">
+        <div class=" col-md-12">
+            <h4>All Tests</h4>
+            <!-- <p ng-show='test.allTests.length>0'>Click on the View/Reply button for more details.</p> -->
+            <strong ng-show='test.allTests.length===0'>Currently there are no tests to display. Please create a test!!</strong>
+            <br>
+            <div class="table-responsive" ng-show='test.allTests.length>0'>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                      <th scope="col">Sl No.</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Number of Questions</th>
+                      <th scope="col">Total Time (in minutes)</th>
+                      <th scope="col">Test Details</th>
+                      <th scope="col">View Statistics</th>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat="t in test.allTests|filter:searchText|startFrom:test.currentPage*test.pageSize | limitTo:test.pageSize">
+                          <td>{{$index+1}}</td>
+                          <td> {{t.title}}</td>
+                          <td>{{t.totalQuestions}}</td>
+                          <td>{{t.totalTime}}</td>
+                          <td>
+                              <a ng-href="#/testDetails"><button type="button" class="btn btn-primary" ng-click="test.singleTest(t)" style="min-width:30px;font-size:15px">View Details</button></a>
+                          </td>
+                          <td>
+                              <a ng-href="#/testStats"><button type="button" class="btn btn-success" ng-click="test.singleTest(t)" style="min-width:30px;font-size:15px">Statistics</button></a>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>   
+        </div>
+            <button ng-show='test.allTests.length>0' ng-disabled="test.currentPage == 0" ng-click="test.currentPage=test.currentPage-1">
+                    Previous
+            </button>
+                    <span ng-show='test.allTests.length>0'>{{test.currentPage+1}}/{{test.numberOfPages()}}</span>
+            <button ng-show='test.allTests.length>0' ng-disabled="test.currentPage >= test.getData().length/test.pageSize - 1" ng-click="test.currentPage=test.currentPage+1">
+                    Next
+            </button>
+    </div>
+    </div>
+<br>
+<br>
+<br>

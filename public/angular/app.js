@@ -1,0 +1,1 @@
+var myApp = angular.module('edacademy', ['ngRoute','angular-jwt','chart.js']);
