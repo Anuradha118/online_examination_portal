@@ -10,7 +10,7 @@ myApp.controller('testController',['$location','$rootScope','$scope','$window','
     main.pageSize=5;
     main.allTests=[];
     main.testData=[];
-
+    main.appearedTest=[];
     // set data for bar graph
     $scope.labels=[];
     $scope.data=[];
@@ -64,6 +64,7 @@ myApp.controller('testController',['$location','$rootScope','$scope','$window','
             .then(function success(response){
                 main.allTests=response.data.data;
                 main.userTakenTest();
+                main.attemptedTest();
             },function error(response){
                 console.log(response);
                 alert('Some error occurred');
@@ -72,6 +73,25 @@ myApp.controller('testController',['$location','$rootScope','$scope','$window','
     }; 
 
     main.getAllTests(); //load when the controller get instantiate
+
+    // function to get all attempted test by admin
+    main.attemptedTest=function(){
+        var appearedTest=[];
+        TestService.getAllAttemptedTest()
+            .then(function success(response){
+                var tests=response.data.data;
+                for(var i=0;i<main.allTests.length;i++){
+                    for(var j=0;j<tests.length;j++){
+                        if(main.allTests[i].testId===tests[j].testId){
+                            appearedTest.push(tests[j]);
+                        }
+                    }
+                }
+                main.appearedTest=[...new Set(appearedTest.map(item=>item.testId))];
+            },function error(response){
+                console.log(response);
+            })
+    };
 
     //function to create new test in the system
     main.createTest=function(){

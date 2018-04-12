@@ -21,7 +21,7 @@ myApp.controller('userController',['$location','$rootScope','UserService',functi
                 main.message=response.data.message;
             },function error(response){
                 console.log(response);
-                alert('Some error occurred!!');
+                // alert('Some error occurred!!');
             }
         );
 
@@ -59,7 +59,7 @@ myApp.controller('userController',['$location','$rootScope','UserService',functi
                 }
             },function error(response){
                 console.log(response);
-                alert('Some error occurred!!');
+                // alert('Some error occurred!!');
             });
             main.email='';
             main.password='';
@@ -139,7 +139,7 @@ myApp.controller('userController',['$location','$rootScope','UserService',functi
 
             }, function errorCallback(response) {
                 console.log(response);
-                alert('Some error occurred');
+                // alert('Some error occurred');
             });
     };
 

@@ -2,51 +2,66 @@
 <br>
 <br>
 <div class="container">
-    <div class="row h-100">
-        <div class="col-lg-4">
-            <div class="card border-dark">
-                <div class="card-header text-white bg-secondary">
-                    <h5>Registered Users<h5>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-6">
-                            <i class="fa fa-users" style="font-size:50px"></i>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                            <p class="card-text" style="font-size:32px;">{{test.noOfUsers}}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer text-muted">
-                    <div class="container">
-                        <div class="row h-100">
-                            <div class=" col-lg-8 col-md-8 col-sm-6 col-xs-6">
-                                <a ng-href="/#/allUsers">
-                                    <button type="button" class="btn btn-secondary">
-                                        Get Details</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="row h-70">
+        <div class="col-lg-6">
+            <a ng-href="/#/addtest"><button class="float-middle btn btn-primary" type="button">Create Test</button></a>
         </div>
-        <div class="col-lg-4">
-                <a ng-href="/#/addtest"><button class="float-middle btn btn-primary" type="button">Create Test</button></a>
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-6 float-right">
             <h5>Search</h5>
             <div class="input-group">
                 <input type="text" class="form-control" ng-model="myDetails.searchText" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Go!</button>
-                    </span>
+                <span class="input-group-btn">
+                    <button class="btn" type="button" style="background-color:#faa938">Go!</button>
+                </span>
             </div>
-        </div>    
+        </div>   
     </div>
 </div>
-<hr>
+<br>
+<div class="container">
+    <div class="row h-50">
+        <div class="col-lg-4">
+            <div class="card p-30" id="admincard">
+                <div class="media">
+                    <div class="media-left media media-middle">
+                        <span><i class="fa fa-users" style="font-size:50px;color:#4680ff"></i></span>
+                    </div>
+                    <div class="media-body media-text-right">
+                        <h2>{{test.noOfUsers}}</h2>
+                        <a ng-href="#/allUsers"><p class="m-b-0">Users</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card p-30" id="admincard">
+                <div class="media">
+                    <div class="media-left media media-middle">
+                        <span><i class="fa fa-file-text-o" style="font-size:50px;color:#ffb64d"></i></span>
+                    </div>
+                    <div class="media-body media-text-right">
+                        <h2>{{test.allTests.length}}</h2>
+                        <a ng-href="#"><p class="m-b-0">Tests</p></a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <div class="col-lg-4">
+            <div class="card p-30" id="admincard">
+                <div class="media">
+                    <div class="media-left media media-middle">
+                        <span><i class="fa fa-edit" style="font-size:50px;color:#fc6180"></i></span>
+                    </div>
+                    <div class="media-body media-text-right">
+                        <h2>{{test.appearedTest.length}}</h2>
+                        <a ng-href="#"><p class="m-b-0">Tests Attempted</p></a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+<br>
 <br>
 <div class="container">
     <div class="row">

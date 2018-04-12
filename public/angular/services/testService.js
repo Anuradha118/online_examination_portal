@@ -68,5 +68,10 @@ myApp.service('TestService',function($http){
     //save examinee details to the database
     main.saveExaminee=function(data){
         return $http.post('/test/addexaminee',data);
-    }
+    };
+
+    // get all attempted tests by admin
+    main.getAllAttemptedTest=function(){
+        return $http.get('/test//admin/alltestsattempted');
+    };
 })

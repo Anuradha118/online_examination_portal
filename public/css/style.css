@@ -124,7 +124,7 @@
   }
 
 .bg-primary{
-	background-color: rgb(137, 187, 22) !important;
+	background-color: #ffb64d !important;
 }
 
 header.masthead{
@@ -137,7 +137,30 @@ header.masthead .masthead-content .masthead-heading {
 header.masthead .masthead-content .masthead-subheading {
 	font-size: 30px;
 }
+#admincard {
+    background: #ffffff none repeat scroll 0 0;
+    margin: 15px 0;
+    padding: 20px;
+    border: 0 solid #413b3b;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.753);
+}
 
+#quescard,#testcard{
+	border: 0 solid #413b3b;
+	border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.753);
+}
+.media-text-right {
+    text-align: right;
+}
+
+.media-body {
+    vertical-align: middle;
+}
+body{
+	color: #262d30;
+}
 /* .fa {
 	padding: 5px;
 	font-size: 10px;

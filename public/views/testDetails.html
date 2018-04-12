@@ -60,7 +60,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8">
-            <div class="card border-info">
+            <div class="card" id="testcard">
                 <div class="card-header bg-primary">
                     <h6 class="text-white">Test Details</h6>
                 </div>
@@ -99,7 +99,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8" ng-repeat="ques in test.testData.questions track by $index">
-            <div class="card border-info mb-3">
+            <div class="card mb-3" id="quescard">
                 <div class="card-header bg-primary">
                     <h6 class="text-white">Question {{$index+1}}</h6>
                 </div>
