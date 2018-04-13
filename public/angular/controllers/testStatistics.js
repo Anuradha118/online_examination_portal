@@ -86,6 +86,7 @@ myApp.controller('testStatistics',['$location','$rootScope','$window','$filter',
     //function to calculate examinee performance
     this.userMetrics=()=>{
         main.noOfTests=main.examineeTests.length;
+        console.log(main.examineeTests);
         main.username=main.examineeTests[0].username;
         if(main.noOfTests>0){
             var sum=0;
