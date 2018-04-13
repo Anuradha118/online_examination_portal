@@ -2,9 +2,9 @@
   "name": "online_exam_portal",
   "version": "1.0.0",
   "description": "A Live Test Taking System based on MEAN stack.",
-  "main": "node server/server.js",
+  "main": "server/server.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
