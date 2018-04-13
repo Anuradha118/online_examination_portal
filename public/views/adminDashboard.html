@@ -3,13 +3,14 @@
 <br>
 <div class="container">
     <div class="row h-70">
-        <div class="col-lg-3">
+        <div class="col-lg-4 col-md-8 col-sm-6 col-xs-7">
             <a ng-href="/#/addtest"><button class="float-middle btn btn-primary" type="button">Create Test</button></a>
-        </div>
-        <div class="col-lg-3" ng-if="test.noOfUsers!=0">
             <a ng-href="#/allUsers"><button type="button" class="btn btn-secondary">All Users</button></a>
         </div>
-        <div class="col-lg-6 float-right">
+        <!-- <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" ng-if="test.noOfUsers!=0">
+            <a ng-href="#/allUsers"><button type="button" class="btn btn-secondary">All Users</button></a>
+        </div> -->
+        <div class="col-lg-8 col-md-4 col-sm-6 col-xs-5">
             <h5>Search</h5>
             <div class="input-group">
                 <input type="text" class="form-control" ng-model="myDetails.searchText" placeholder="Search for...">

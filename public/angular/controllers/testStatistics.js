@@ -109,8 +109,8 @@ myApp.controller('testStatistics',['$location','$rootScope','$window','$filter',
             main.avg=(sum/main.noOfTests).toFixed(2);
             $rootScope.Percent=main.avg;
 
-            main.max=main.examineeTests[maxTemp].score + ' out of ' + main.examineeTests[maxTemp].totalQuestions;
-            main.min=main.examineeTests[minTemp].score + ' out of ' + main.examineeTests[minTemp].totalQuestions;
+            main.max=main.examineeTests[maxTemp].score + '/' + main.examineeTests[maxTemp].totalQuestions;
+            main.min=main.examineeTests[minTemp].score + '/' + main.examineeTests[minTemp].totalQuestions;
 
             var data={
                 username:main.username,
