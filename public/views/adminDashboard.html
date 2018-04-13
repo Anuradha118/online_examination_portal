@@ -3,8 +3,11 @@
 <br>
 <div class="container">
     <div class="row h-70">
-        <div class="col-lg-6">
+        <div class="col-lg-3">
             <a ng-href="/#/addtest"><button class="float-middle btn btn-primary" type="button">Create Test</button></a>
+        </div>
+        <div class="col-lg-3">
+            <a ng-href="#/allUsers"><button type="button" class="btn btn-secondary">All Users</button></a>
         </div>
         <div class="col-lg-6 float-right">
             <h5>Search</h5>
@@ -26,9 +29,10 @@
                     <div class="media-left media media-middle">
                         <span><i class="fa fa-users" style="font-size:50px;color:#4680ff"></i></span>
                     </div>
+                    <br>
                     <div class="media-body media-text-right">
                         <h2>{{test.noOfUsers}}</h2>
-                        <a ng-href="#/allUsers"><p class="m-b-0">Users</p></a>
+                        <a ng-href=""><p class="m-b-0">Users</p></a>  
                     </div>
                 </div>
             </div>
@@ -41,7 +45,7 @@
                     </div>
                     <div class="media-body media-text-right">
                         <h2>{{test.allTests.length}}</h2>
-                        <a ng-href="#"><p class="m-b-0">Tests</p></a>
+                        <a ng-href=""><p class="m-b-0">Tests</p></a>
                     </div>
                 </div>
             </div>  
@@ -54,7 +58,7 @@
                     </div>
                     <div class="media-body media-text-right">
                         <h2>{{test.appearedTest.length}}</h2>
-                        <a ng-href="#"><p class="m-b-0">Tests Attempted</p></a>
+                        <a ng-href=""><p class="m-b-0">Tests Attempted</p></a>
                     </div>
                 </div>
             </div>  

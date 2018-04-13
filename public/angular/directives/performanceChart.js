@@ -7,7 +7,7 @@ myApp.directive('performancePieChart',function(){
         link:function(scope,elem,attr,ctrl){
             var circle=elem[0];
             var options={
-                size:200,
+                size:180,
                 lineWidth:15,
                 rotate:0
             };

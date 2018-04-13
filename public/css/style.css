@@ -156,7 +156,7 @@ header.masthead .masthead-content .masthead-subheading {
 }
 
 .media-body {
-    vertical-align: middle;
+    vertical-align: left;
 }
 body{
 	color: #262d30;
@@ -207,25 +207,27 @@ body{
   .chart {
     position:relative;
 	margin:25px;
+	padding: 20px 10px;
 	/* margin-bottom: 20px; */
     width:150px;
     height:150px;
   }
   .chart > canvas {
     display:block;
-    position:absolute;
+	position:absolute;
+	padding: 0 30px;
     top:0;
 	left:0;
   }
   .chart > span {
     color:#555;
     display:block;
-    line-height:200px;
+    line-height:150px;
     text-align:center;
     width:200px;
     font-family:sans-serif;
     font-size:20px;
     font-weight:100;
-    margin-left:3px;
+    margin-left:15px;
   }
   
