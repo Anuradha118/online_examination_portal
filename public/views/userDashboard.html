@@ -9,7 +9,7 @@
                     <strong>Take Test</strong></button>
             </a>
         </div>
-        <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-if="test.noOfTests!=0">
+        <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-3" ng-if="test.testsTaken.length!=0">
             <a ng-href="#/attempted-tests">
                 <button type="button" class="btn btn-md btn-danger float-right">
                     <strong>Attempted Test</strong></button>
@@ -76,9 +76,9 @@
     </div>
 </div>
 <br>
-<div class="container">
+<div class="container" ng-if="test.testsTaken.length!=0">
     <div class="row h-100">
-        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" ng-if="test.noOfTests!=0">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
             <div class="card p-30 mx-auto" id="admincard">
                 <h6 style="text-align:center"><strong>Score Percentage in each Test</strong></h6>
                 <div style="width:90%;height:90%;">
@@ -87,7 +87,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 float-right" ng-if="test.noOfTests!=0">
+        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 float-right">
             <div class="card p-50 mx-auto" id="admincard">
                 <h6 style="text-align:center"><strong>Average Performance</strong></h6>
                 <div class="chart" performance-pie-chart="Percent"></div>
