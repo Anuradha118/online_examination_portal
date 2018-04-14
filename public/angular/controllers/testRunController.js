@@ -37,37 +37,10 @@ myApp.controller('testRunController',['$location','$window','$interval','$timeou
 
     //function run timer when exam starts
     main.timer=function(){
-        var timeStamp=new Array(main.testData.totalQuestions);
         main.minutes=main.time-1;
         main.seconds=60;
         main.onTimeOut=function(){
-            if(main.index>0){
-                var cursec=main.seconds;
-                var curmin=main.minutes;
-                timeStamp[main.index]=curmin+':' + cursec;
-                var prevmin=timeStamp[main.index-1].split(':')[0];
-                var prevsec=timeStamp[main.index-1].split(':')[1];
-
-                var sec=prevsec-cursec;
-                var min=prevmin-curmin;
-                if(sec>=60){
-                    sec=sec-60;
-                    min+=1;
-                }
-                main.timeTaken[main.index]=min+' minute(s) ' + sec +' second(s) ';
-            }else{
-                var cursec=main.seconds;
-                var curmin=main.minutes;
-                timeStamp[main.index]=curmin+':' + cursec;
-                var sec=60-cursec;
-                var min=(main.time-1)-curmin;
-                if(sec>=60){
-                    sec=sec-60;
-                    min+=1;
-                }
-                main.timeTaken[main.index]=min+' minute(s) ' + sec +' second(s) ';
-            }
-            // console.log(timeStamp);
+            main.timeTaken[main.index] = main.timeTaken[main.index] + 1;
             main.seconds--;
 
             if(main.seconds==-1){
@@ -140,7 +113,6 @@ myApp.controller('testRunController',['$location','$window','$interval','$timeou
     main.calculateScore=function(){
         main.score=0;
         var username;
-        console.log(main.userAnswers);
         for(var j=0;j<main.testData.totalQuestions;j++){
             if(main.userAnswers[j]==main.correctAnswers[j]){
                 main.score++;
