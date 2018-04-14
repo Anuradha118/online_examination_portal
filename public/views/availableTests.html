@@ -16,7 +16,7 @@
                     <p>Test Title : {{test.testData.title}}</p>
                     <p>Description : {{test.testData.description}}</p>
                     <p>Number of Questions : {{test.testData.totalQuestions}}</p>
-                    <p>Time Limit : {{test.testData.totalTime}} minutes</p>
+                    <p>Time Limit : {{test.testData.totalTime}} minute(s)</p>
                     <p>instructions : {{test.testData.instructions}}</p>
                 </div>
 
@@ -44,7 +44,7 @@
                 </div>
                 <div class="card-body">
                     <h6 class="card-title">Number of Questions:{{atest.totalQuestions}}</h6>
-                    <p class="card-text">Time for Test:{{atest.totalTime}} minutes</p>
+                    <p class="card-text">Time for Test:{{atest.totalTime}} minute(s)</p>
                     <a ng-click="test.singleTest(atest)" href="" data-toggle="modal" data-target="#exampleModal" class="btn btn-round" style="background-color:brown;color:white;border-radius:30px;">Start Test</a>
                 </div>
             </div>
