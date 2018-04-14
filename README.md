@@ -8,7 +8,7 @@ generated based on that.
 
 # Features
 1) User Management System -
-    - User can signup using email,gmail and facebook.
+    - User can signup using either with email or gmail or facebook.
     - User can signin to the system through email and password combination or using Gmail/Facebook.
     - Forgot password functionality should be there to reset password.
 2) User Testing management system -
