@@ -51,6 +51,7 @@ myApp.controller('testRunController',['$location','$window','$interval','$timeou
                 var sec=prevsec-cursec;
                 var min=prevmin-curmin;
                 if(sec>=60){
+                    sec=sec-60;
                     min+=1;
                 }
                 main.timeTaken[main.index]=min+' minute(s) ' + sec +' second(s) ';
@@ -60,6 +61,10 @@ myApp.controller('testRunController',['$location','$window','$interval','$timeou
                 timeStamp[main.index]=curmin+':' + cursec;
                 var sec=60-cursec;
                 var min=(main.time-1)-curmin;
+                if(sec>=60){
+                    sec=sec-60;
+                    min+=1;
+                }
                 main.timeTaken[main.index]=min+' minute(s) ' + sec +' second(s) ';
             }
             // console.log(timeStamp);
