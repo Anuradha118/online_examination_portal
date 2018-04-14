@@ -23,10 +23,8 @@ module.exports = function (passport) {
         },
         function (token, refreshToken, profile, done) {
             console.log(profile);
-            console.log(token+'at line 27');
-            User.findOne({
-                'social.uid': profile.id
-            }, function (err, user) {
+            User.findOne(
+                    {'social.uid': profile.id}, function (err, user) {
                 if (err)
                     return done(err);
                 if (user) {
@@ -54,11 +52,14 @@ module.exports = function (passport) {
           },
           function(accessToken, refreshToken, profile, done) {
                 process.nextTick(function(){
-                    User.findOne({'social.uid': profile.id}, function(err, user){
+                    User.findOne(
+                            {'social.uid': profile.id}, function(err, user){
                         if(err)
                             return done(err);
-                        if(user)
+                        if(user){
+                            console.log(user);
                             return done(null, user);
+                        }
                         else {
                             var newUser = new User();
                             newUser.social.uid = profile.id;

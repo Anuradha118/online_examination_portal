@@ -86,7 +86,7 @@ router.post('/signup',custValidator.signup,function(req,res){
 //API for local signin
 router.post('/signin',custValidator.signin,function(req,res){
     var body=_.pick(req.body,['email','password']);
-    User.findOne({'local.email':req.body.email},function(err,user){
+    User.findOne({$or: [{'local.email':req.body.email},{'social.email':req.body.email}]},function(err,user){
         if(err){
             myResponse=responseGenerator.generate(true, "Some error", 500, null);
             res.send(myResponse);
