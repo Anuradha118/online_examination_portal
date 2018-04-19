@@ -33,7 +33,7 @@ myApp.directive('performancePieChart',function(){
                 ctx.save();
                 ctx.translate(options.size / 2, options.size / 2);
                 ctx.rotate((-1 / 2 + options.rotate / 180) * Math.PI);
-                percent = Math.min(Math.max(0, percent || 1), 1);
+                percent = Math.min(Math.max(0, percent), 1);
                 ctx.beginPath();
                 ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
                 ctx.strokeStyle = color;

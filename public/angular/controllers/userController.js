@@ -125,9 +125,11 @@ myApp.controller('userController',['$location','$rootScope','UserService',functi
             .then(function success(response){
                 if(response.data.data != undefined || response.data.data != null){
                     UserService.setData(response.data.data);
+                    main.closeButton=response.data.error;
+                    $rootScope.isLoggedIn=true;
                     var userInfo=response.data.data.user;
                     if(userInfo){
-                        if(main.checkAdmin(userInfo)){
+                        if(main.checkAdmin(userInfo.email)){
                             $rootScope.isAdmin=true;
                             $location.path('/admindashboard');
                         }else{

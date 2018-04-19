@@ -330,7 +330,7 @@ myApp.controller('testController',['$location','$rootScope','$scope','$window','
             main.avg=(sum/main.noOfTests).toFixed(2);
             main.max=main.testsTaken[maxTemp].score + '/' + main.testsTaken[maxTemp].totalQuestions;
             main.min=main.testsTaken[minTemp].score + '/' + main.testsTaken[minTemp].totalQuestions;
-
+            
             $scope.Percent=main.avg;
         }
     };
