@@ -1,4 +1,4 @@
-myApp.controller('testRunController',['$location','$window','$interval','$timeout','jwtHelper','TestService','TestInformation',function($location,$window,$interval,$timeout,jwtHelper,TestService,TestInformation){
+myApp.controller('testRunController',['$location','$window','$interval','$timeout','$localStorage','jwtHelper','TestService','TestInformation',function($location,$window,$interval,$timeout,$localStorage,jwtHelper,TestService,TestInformation){
 
     var main=this;
 
@@ -118,8 +118,7 @@ myApp.controller('testRunController',['$location','$window','$interval','$timeou
                 main.score++;
             }
         }
-
-        var userInfo=jwtHelper.decodeToken(localStorage.getItem('x-auth'));
+        var userInfo=jwtHelper.decodeToken($localStorage.accessToken);
 
         if(userInfo.payload.firstname){
             username=userInfo.payload.firstname + ' ' + userInfo.payload.lastname;
