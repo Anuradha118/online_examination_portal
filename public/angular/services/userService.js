@@ -1,7 +1,7 @@
-myApp.service('UserService',function($http,$window,jwtHelper){
+myApp.service('UserService',function($http,$localStorage,jwtHelper){
 
     var main=this;
-    var store=$window.localStorage;
+    // var store=$window.localStorage;
     var authToken='';
     var user='';
 
@@ -37,15 +37,15 @@ myApp.service('UserService',function($http,$window,jwtHelper){
         if(data){
             main.authToken=data.token;
             main.user=data.user.email;
-            store.setItem('user',data.user.email);
-            store.setItem('x-auth',data.token);
+            $localStorage.user=data.user.email;
+            $localStorage.accessToken=data.token;
         }
     }; // end of set-token
 
     this.getData=function(){
          var data={
-             user:store.getItem('user'),
-             token:store.getItem('x-auth')
+            user:$localStorage.user,
+            token:$localStorage.accessToken
          };
          return data;
     }; // end of get-token
@@ -57,7 +57,7 @@ myApp.service('UserService',function($http,$window,jwtHelper){
     }; //end getting passport login details
 
     this.isAuthenticated=function(){
-        var token=store.getItem('x-auth');
+        var token=$localStorage.accessToken;
         return (token===main.authToken || jwtHelper.isTokenExpired(token));
     }; // check if user is authenticated or not
 

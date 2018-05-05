@@ -1,1 +1,1 @@
-var myApp = angular.module('edacademy', ['ngRoute','angular-jwt','chart.js']);
+var myApp = angular.module('edacademy', ['ngRoute','ngStorage','angular-jwt','chart.js']);

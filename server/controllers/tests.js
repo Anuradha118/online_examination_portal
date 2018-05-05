@@ -7,7 +7,7 @@ var Test=require('./../models/Test');
 var Examinee=require('./../models/Examinee');
 
 var responseGenerator=require('./../utils/responsegenerator');
-var authenticate=require('./../utils/authenticate');
+var authenticate=require('./../middleware/authenticate');
 var myResponse={};
 
 router.use(function(req,res,next){

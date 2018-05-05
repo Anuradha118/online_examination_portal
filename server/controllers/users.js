@@ -12,7 +12,7 @@ var nodemailer=require('nodemailer');
 var sgTransport = require('nodemailer-sendgrid-transport');
 var User=require('./../models/User');
 var responseGenerator=require('./../utils/responsegenerator');
-var custValidator=require('./../utils/validator');
+var custValidator=require('./../middleware/validator');
 var eventEmitter = new events.EventEmitter();
 var myResponse={};
 

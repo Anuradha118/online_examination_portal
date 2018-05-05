@@ -11,8 +11,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/admindashboard', {
             templateUrl: '/views/adminDashboard.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testController',
@@ -21,8 +21,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/addtest', {
             templateUrl: '/views/addTest.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testController',
@@ -31,8 +31,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/testDetails', {
             templateUrl: '/views/testDetails.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testController',
@@ -41,8 +41,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/userdashboard', {
             templateUrl: '/views/userDashboard.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope,$localStorage, UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testController',
@@ -51,8 +51,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/testrun', {
             templateUrl: '/views/testRun.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testRunController',
@@ -61,8 +61,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/testStats', {
             templateUrl: '/views/testStatistics.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testStatistics',
@@ -71,8 +71,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/userStats', {
             templateUrl: '/views/userStatistics.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testStatistics',
@@ -81,8 +81,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/available-tests', {
             templateUrl: '/views/availableTests.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testController',
@@ -91,8 +91,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/attempted-tests', {
             templateUrl: '/views/attemptedTests.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testController',
@@ -101,8 +101,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         .when('/allUsers', {
             templateUrl: '/views/allUsers.html',
             resolve: {
-                "check": function ($location, $rootScope, UserService) {
-                    routeGuard($location, $rootScope, UserService);
+                "check": function ($location, $rootScope, $localStorage,UserService) {
+                    routeGuard($location, $rootScope, $localStorage,UserService);
                 }
             },
             controller: 'testStatistics',
@@ -117,8 +117,8 @@ myApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $
         requireBase: false
     });
 
-    function routeGuard($location, $rootScope, UserService) {
-        if (localStorage.getItem('user')===UserService.user) {
+    function routeGuard($location, $rootScope, $localStorage,UserService) {
+        if($localStorage.user===UserService.user){
             if (!UserService.isAuthenticated()) {
                 alert("Token Expired :(");
                 $location.path('/');
