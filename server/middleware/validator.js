@@ -1,4 +1,4 @@
-var responseGenerartor=require('./responsegenerator');
+var responseGenerartor=require('./../utils/responsegenerator');
 var validator=require('validator');
 var passwordValidator = require('password-validator');
 var schema = new passwordValidator();

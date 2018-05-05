@@ -1,6 +1,6 @@
 require('./../configs/config');
 const jwt=require('jsonwebtoken');
-var responseGenerator=require('./responsegenerator');
+var responseGenerator=require('./../utils/responsegenerator');
 
 module.exports.auth=function(req,res,next){
     // console.log('inside auth');
